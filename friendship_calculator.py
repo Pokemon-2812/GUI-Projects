@@ -1,0 +1,23 @@
+from tkinter import *
+import random 
+root=Tk()
+root.title("Friendship Calculator")
+root.geometry("400x300")
+var1=StringVar()
+var2=StringVar()
+var3=StringVar()
+def calculate():
+	percentage=random.randint(0,100)
+	var3.set(f"{percentage}%")
+	# btn.config(bg=["#"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])])
+	# print(btn.cget("bg"))
+Label(root,text="Friendship Calculator",font="arial 18 bold").pack(anchor=CENTER,pady=5)
+Label(root,text="First person's name",font="arial 12").pack(anchor=W)
+entry1=Entry(root,textvariable=var1,font="arial 11").pack(fill=X,ipady=5,pady=5)
+Label(root,text="Second person's name",font="arial 12").pack(anchor=W)
+entry2=Entry(root,textvariable=var2,font="arial 11").pack(fill=X,ipady=5,pady=5)
+Label(root,text="Friendship Percentage",font="arial 12").pack(anchor=W)
+entry3=Entry(root,textvariable=var3,font="arial 11").pack(fill=X,ipady=5,pady=5)
+btn=Button(root,text="Calculate",font="arial 14 bold",bg="#2055CB",fg="white",command=calculate)
+btn.pack(fill=X,ipady=3,pady=5)
+root.mainloop()
